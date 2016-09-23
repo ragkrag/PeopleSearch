@@ -6,8 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Search.Controllers.Tests
 {
     [TestClass()]
-    // [TestFixture]
-    public class SearchApiControllerTests
+     public class SearchApiControllerTests
     {
         private Mock<PeopleSearchEntities> _sDB;
         private Mock<SearchApiController> _sap;
@@ -35,13 +34,13 @@ namespace Search.Controllers.Tests
             var actual = new SearchApiController(_searchData.Object);
             var value = actual.GetFilteredData("rag");
             List<SearchModel> result = value.Data as List<SearchModel>;
-            NUnit.Framework.Assert.AreEqual(1, result.Count);
-            NUnit.Framework.Assert.AreEqual(1, result[0].PersonId);
-            NUnit.Framework.Assert.AreEqual("rag", result[0].FirstName);
-            NUnit.Framework.Assert.AreEqual("kol", result[0].LastName);
-            NUnit.Framework.Assert.AreEqual(25, result[0].Age);
-            NUnit.Framework.Assert.AreEqual("cricket,movies", result[0].Interests);
-            NUnit.Framework.Assert.AreEqual(1, result[0].PersonId);
+            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(1, result[0].PersonId);
+            Assert.AreEqual("rag", result[0].FirstName);
+            Assert.AreEqual("kol", result[0].LastName);
+            Assert.AreEqual(25, result[0].Age);
+            Assert.AreEqual("cricket,movies", result[0].Interests);
+            Assert.AreEqual(1, result[0].PersonId);
 
         }
     }
